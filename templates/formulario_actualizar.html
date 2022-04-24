@@ -1,0 +1,60 @@
+{% extends 'estructura.html' %}
+
+
+
+{% block contenido_principal %}
+
+{% block titulo %}
+<title>Modificar lugar</title>
+{% endblock %}
+
+
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Modificar lugares</h3></div>
+                                    <div class="card-body">
+                                        <form method="post" action="{{url_for('update_lugar')}}">
+                                            <!--id oculto-->
+                                            <input type="hidden" name="id" value="{{ id_lugar }}">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="estaccionamiento" name="estacionamiento" type="text" value="{{lista.estacionamiento}}" />
+                                                        <label for="inputFirstName">Estacionamiento</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating">
+                                                        <input class="form-control" id="estado" name="estado" type="text" value="{{lista.estado}}" />
+                                                        <label for="inputLastName">Estado</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="fecha" name="fecha" type="date" value="{{lista.fecha}}" />
+                                                        <label for="inputPassword">Fecha</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="hora" name="hora" type="time"  value="{{lista.hora}}"/>
+                                                        <label for="inputPasswordConfirm">Hora</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn-success">Actualizar</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+
+{% endblock %}
